@@ -19,10 +19,10 @@ require([/*'domReady', */'consolePlus'], (/*domReady, */_cp) => {
     _cp.info("info start", 60);
     _cp.debug("debug hahaha", 1024);
     _cp.inject();
-    console.error("error", "lalala", 123);
-    console.warn("warn wowowo", 456);
+    console.error("lalala", 123);
+    console.warn("wowowo", 456);
     console.log("log papapa", 777);
-    console.info("info xxxxx", 8888);
+    console.info("info 哈哈哈哈哈", 8888);
     console.debug("debug yyyyy", 999999);
 
     setTimeout(() => {
