@@ -2,7 +2,7 @@ requirejs.config({
   baseUrl: "https://s3.shawxu.net/js/lib/",
   paths: {
     domReady: "requirejs/plugins/domReady.2.0.1",
-    consolePlus: "console-plus/console-plus" //直接引用src文件
+    consolePlus: "/assets/script/lib/console-plus/console-plus" //直接引用src文件
   }
 });
 
