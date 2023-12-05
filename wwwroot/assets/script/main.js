@@ -31,6 +31,7 @@ require(["domReady", "consolePlus"], (domReady, _cp) => {
 
     _cp.report({
       clear: false,
+      reportUrl: "https://shawxu.cn/log/",
       componentUrl: "console-plus/components/reportr"
     });
   });
