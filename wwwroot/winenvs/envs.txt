@@ -1,0 +1,58 @@
+Hidden:
+	ALLUSERSPROFILE=C:\ProgramData
+	APPDATA=D:\Users\xiaoxu\AppData\Roaming				HKEY_CURRENT_USER\Volatile Environment
+	CommonProgramFiles=C:\Program Files\Common Files
+	CommonProgramFiles(x86)=C:\Program Files (x86)\Common Files
+	CommonProgramW6432=C:\Program Files\Common Files
+	COMPUTERNAME=XX-LNVR9000K-21
+	HOMEDRIVE=C:							HKEY_CURRENT_USER\Volatile Environment
+	HOMEPATH=\Users\lenovo						HKEY_CURRENT_USER\Volatile Environment
+	LOCALAPPDATA=C:\Users\lenovo\AppData\Local			HKEY_CURRENT_USER\Volatile Environment
+	LOGONSERVER=\\XX-LNVR9000K-21					HKEY_CURRENT_USER\Volatile Environment
+	ProgramData=C:\ProgramData
+	ProgramFiles=C:\Program Files
+	ProgramFiles(x86)=C:\Program Files (x86)
+	ProgramW6432=C:\Program Files
+	PROMPT=$P$G
+	PUBLIC=C:\Users\Public
+	SESSIONNAME=Console
+	SystemDrive=C:
+	SystemRoot=C:\WINDOWS
+	USERDOMAIN=XX-LNVR9000K-21					HKEY_CURRENT_USER\Volatile Environment
+	USERDOMAIN_ROAMINGPROFILE=XX-LNVR9000K-21			HKEY_CURRENT_USER\Volatile Environment
+	USERNAME=xiaoxu							HKEY_CURRENT_USER\Volatile Environment
+	USERPROFILE=C:\Users\lenovo					HKEY_CURRENT_USER\Volatile Environment
+	WSLENV=WT_SESSION:WT_PROFILE_ID:
+	WT_PROFILE_ID={0caa0dad-35be-5f56-a8ff-afceeeaa6101}
+	WT_SESSION=9ba60273-270d-4997-9f60-c5c4ba8eb619
+
+User:
+	ChocolateyLastPathUpdate=133155529628539156
+	MOZ_PLUGIN_PATH=D:\Program Files (x86)\Foxit Software\Foxit Reader Plus\plugins\
+	OneDrive=E:\Users\xiaoxu\OneDrive
+	OneDriveConsumer=E:\Users\xiaoxu\OneDrive
+	Path=%Path%;C:\Users\lenovo\AppData\Local\Microsoft\WindowsApps;;D:\Program Files\Microsoft VS Code Insiders\bin;C:\Users\lenovo\AppData\Roaming\npm;C:\Users\lenovo\.dotnet\tools
+	TEMP=C:\Users\lenovo\AppData\Local\Temp
+	TMP=C:\Users\lenovo\AppData\Local\Temp
+
+System:
+	asl.log=Destination=file
+	ChocolateyInstall=C:\ProgramData\chocolatey
+	ComSpec=C:\WINDOWS\system32\cmd.exe
+	DriverData=C:\Windows\System32\Drivers\DriverData
+	NUMBER_OF_PROCESSORS=16
+	OS=Windows_NT
+	Path=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\Program Files\Git\cmd;C:\ProgramData\chocolatey\bin;D:\Program Files\nodejs\;C:\Program Files\dotnet\;C:\Program Files\PowerShell\7\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;
+	PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW
+	POWERSHELL_DISTRIBUTION_CHANNEL=MSI:Windows 10 Pro
+	PROCESSOR_ARCHITECTURE=AMD64
+	PROCESSOR_IDENTIFIER=AMD64 Family 25 Model 80 Stepping 0, AuthenticAMD
+	PROCESSOR_LEVEL=25
+	PROCESSOR_REVISION=5000
+	PSModulePath=C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules
+	windir=C:\WINDOWS
+	--TEMP=C:\WINDOWS\TEMP--
+	--TMP=C:\WINDOWS\TEMP--
+	--USERNAME=SYSTEM--
+
+
