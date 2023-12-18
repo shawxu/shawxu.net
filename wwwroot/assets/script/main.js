@@ -2,7 +2,7 @@ requirejs.config({
   baseUrl: "https://s3.shawxu.net/js/lib/",
   paths: {
     domReady: "requirejs/plugins/domReady.2.0.1",
-    consolePlus: "console-plus/console-plus"
+    consolePlus: "console-plus/console-plus.min"
   }
 });
 
@@ -32,7 +32,7 @@ require(["domReady", "consolePlus"], (domReady, _cp) => {
     _cp.report({
       clear: false,
       reportUrl: "https://shawxu.cn/log/",
-      componentUrl: "console-plus/components/reportr"
+      componentUrl: "console-plus/components/reportr.min"
     });
   });
 });
