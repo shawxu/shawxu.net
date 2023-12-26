@@ -4,25 +4,42 @@
   <meta charset="UTF-8">
   <title>Blog editor</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="https://s3.shawxu.net/images/favicons/xx-v1/favicon.ico">
   <link rel="stylesheet" href="https://s3.shawxu.net/css/bootstrap.min.css">
-  <style>
-    textarea {
-      vertical-align: top;
-      width: 400px;
-      height: 200px;
-    }
-  </style>
+	<link rel="shortcut icon" href="https://s3.shawxu.net/images/favicons/xx-v1/favicon.ico">
 </head>
 <body>
   <main>
-    <form name="editForm" id="editFm" method="post" action="https://shawxu.cn/blog/add/" enctype="application/x-www-form-urlencoded">
-      标题： <input type="text" name="title" placeholder="写个标题把..."><br>
-      正文： <textarea name="content" placeholder="多写点正文吧..."></textarea><br>
-      <input type="reset" value="清空">
-      <input type="submit" value="发表">
-    </form>
+    <article class="container-md">
+      <h4>日志发表</h4>
+      <form name="editForm" id="editFm" method="post" action="https://shawxu.cn/blog/add/" enctype="application/x-www-form-urlencoded">
+        <div class="row mb-3">
+          <label class="col-sm-2 col-form-label" for="formInputTitle">标题：</label>
+          <div class="col-sm-10">
+            <input class="form-control" id="formInputTitle" type="text" name="title" placeholder="写个标题把...">
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label class="col-sm-2 col-form-label" for="formTextAreaContent">正文：</label>
+          <div class="col-sm-10">
+            <textarea class="form-control" id="formTextAreaContent" name="content" rows="5" placeholder="多写点正文吧..."></textarea>
+          </div>
+        </div>
+        <button class="btn btn-secondary" type="reset">清空</button>
+        <button class="btn btn-primary" type="submit">发表</button>
+      </form>
+    </article>
   </main>
-  <script async src="/assets/script/blog/edit/main.js"></script>
+  <div class="toast-container top-50 start-50 translate-middle">
+    <div id="btsToast" class="toast align-items-center text-bg-success" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">
+          Hello, world! This is a toast message.
+        </div>
+        <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+  <script defer src="https://s3.shawxu.net/js/lib/bootstrap/bootstrap.bundle.min.js"></script>
+  <script defer src="/assets/script/blog/edit/main.js"></script>
 </body>
 </html>
