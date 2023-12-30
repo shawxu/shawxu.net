@@ -2,12 +2,19 @@ requirejs.config({
   baseUrl: "https://s3.shawxu.net/js/lib/",
   paths: {
     domReady: "requirejs/plugins/domReady.2.0.1",
-    consolePlus: "console-plus/console-plus.min"
+    consolePlus: "console-plus/console-plus.min",
+    md5: "/assets/script/lib/md5.amd",
+    sha1: "/assets/script/lib/sha1.amd"
   }
 });
 
 
-require(["domReady", "consolePlus"], (domReady, _cp) => {
+require([
+  "domReady",
+  "consolePlus",
+  "md5",
+  "sha1"
+], (domReady, _cp, md5, sha1) => {
   domReady(() => {
     //This function is called once the DOM is ready.
     //It will be safe to query the DOM and manipulate
@@ -27,7 +34,10 @@ require(["domReady", "consolePlus"], (domReady, _cp) => {
 
     setTimeout(() => {
       document.querySelector("#txt_out").textContent = _cp.get();
-    }, 2000);
+      console.log(md5("Hello world!", true));
+      console.log(sha1("Hello world!", true));
+    }, 1000);
+
 
     _cp.report({
       clear: false,
