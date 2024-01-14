@@ -16,7 +16,22 @@ require([
 ], (dr, bootstrap, cp) => {
   dr((doc) => {
     cp.info("DOM Ready.");
+
     const toastBootstrap = bootstrap.Toast.getOrCreateInstance(doc.querySelector("#btsToast"));
     toastBootstrap.show();
+
+    const suF = doc["signupForm"] || doc.getElementById("signupFm");
+    if (typeof suF != "object" || suF.tagName != 'FORM') {
+      throw new Error("找不到核心表单");
+    }
+
+    function submitHandler(evt) {
+      cp.info("signup form submit...");
+      if ("object" == typeof evt && evt.target && evt.target.tagName == "FORM") {
+        evt.preventDefault();
+      }  
+    }
+
+    suF.addEventListener("submit", submitHandler);
   });
 });

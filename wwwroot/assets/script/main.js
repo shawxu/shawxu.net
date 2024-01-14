@@ -33,17 +33,18 @@ require([
     console.debug("debug yyyyy", 999999);
 
     setTimeout(() => {
-      document.querySelector("#txt_out").textContent = _cp.get();
       console.log(md5("Hello world!", true));
       console.log(sha1("Hello world!", true));
+
+      document.querySelector("#txt_out").textContent = _cp.get();
+      _cp.report({
+        clear: false,
+        reportUrl: "https://shawxu.cn/log/",
+        componentUrl: "console-plus/components/reportr.min"
+      });
     }, 1000);
 
 
-    _cp.report({
-      clear: false,
-      reportUrl: "https://shawxu.cn/log/",
-      componentUrl: "console-plus/components/reportr.min"
-    });
   });
 });
 
