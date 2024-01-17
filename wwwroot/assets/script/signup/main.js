@@ -70,7 +70,6 @@ require([
         
         fm.pwd.value = sha1(sRPwd.value.trim(), true);
 
-        window.addEventListener("message", messageListener);
       }  
     }
 
@@ -79,5 +78,7 @@ require([
     }
 
     suF.addEventListener("submit", submitHandler);
+    window.addEventListener("message", messageListener);
+
   });
 });
