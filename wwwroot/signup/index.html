@@ -11,19 +11,20 @@
   <main>
     <article class="container">
       <h4>用户注册</h4>
-      <form name="signupForm" id="signupFm" method="post" action="https://shawxu.cn/account/signup/" enctype="application/x-www-form-urlencoded">
+      <form name="signupForm" id="signupFm" method="post" target="postedFormSandbox" action="https://shawxu.cn/account/signup/" enctype="application/x-www-form-urlencoded">
         <div class="form-floating mb-3">
-          <input type="email" class="form-control" placeholder="name@example.com">
-          <label for="floatingInput">Email 地址</label>
+          <input name="email" id="signEmail" type="email" class="form-control" placeholder="name@example.com">
+          <label for="signEmail">Email 地址</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="password" class="form-control" placeholder="Password">
-          <label for="floatingPassword">密码</label>
+          <input id="signPwd" type="password" class="form-control" placeholder="Password">
+          <label for="signPwd">密码</label>
         </div>
         <div class="form-floating mb-3">
-          <input type="password" class="form-control" placeholder="RePassword">
-          <label for="floatingPassword">密码确认</label>
+          <input id="signRePwd" type="password" class="form-control" placeholder="RePassword">
+          <label for="signRePwd">密码确认</label>
         </div>
+        <input type="hidden" name="pwd">
         <button class="btn btn-secondary" type="reset">清空</button>
         <button class="btn btn-primary" type="submit">注册</button>
       </form>
@@ -39,6 +40,7 @@
       </div>
     </div>
   </div>
+  <iframe title="hidden" name="postedFormSandbox" src="about:blank" width="1" height="1"></iframe>
   <script data-main="/assets/script/signup/main.js" src="https://s3.shawxu.net/js/lib/requirejs/require.js.2.3.6.min.js"></script>
 </body>
 </html>

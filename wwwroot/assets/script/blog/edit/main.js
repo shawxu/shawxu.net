@@ -15,8 +15,8 @@
     if ("object" == typeof evt && evt.target && evt.target.tagName == "FORM") {
       evt.preventDefault();
 
-      let fm = evt.target;
-      let fd = new FormData(fm);
+      const fm = evt.target;
+      const fd = new FormData(fm);
       let t, s, o;
 
       try {
