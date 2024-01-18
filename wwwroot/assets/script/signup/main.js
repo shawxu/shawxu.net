@@ -28,6 +28,8 @@ require([
       throw new Error("找不到核心表单");
     }
 
+    let submitTimeout;
+
     function submitHandler(evt) {
       cp.info("signup form submit...");
       if ("object" == typeof evt && evt.target && evt.target.tagName == "FORM") {
@@ -69,11 +71,16 @@ require([
         }
         
         fm.pwd.value = sha1(sRPwd.value.trim(), true);
-
+        submitTimeout = setTimeout(submitTimeoutHandler, 10000);
       }  
     }
 
+    function submitTimeoutHandler() {
+      cp.error("表单提交服务器超时");
+    }
+
     function messageListener(evt) {
+      clearTimeout(submitTimeout);
       cp.info("收到信息", evt.data);
     }
 
