@@ -31,54 +31,94 @@ require([
     function submitHandler(evt) {
       cp.info("signup form submit...");
       if ("object" == typeof evt && evt.target && evt.target.tagName == "FORM") {
-        const fm = evt.target;
-
-        if (fm.email.value.trim().match(EMAIL_REXP)) {
-          cp.info("邮箱名正确");
-        } else {
-          cp.error("错误的邮箱名格式");
-          evt.preventDefault();
-          return;
-        }
-
-        const sPwd = doc.getElementById("signPwd");
-        const sRPwd = doc.getElementById("signRePwd");
-
-        if ("object" == typeof sPwd && sPwd.tagName == "INPUT" && "object" == typeof sRPwd && sRPwd.tagName == "INPUT") {
-          cp.info("密码元素存在");
-        } else {
-          cp.error("密码元素不存在");
-          evt.preventDefault();
-          return;
-        }
-
-        if (sPwd.value.trim().length >= MIN_PWD_LEN) {
-          cp.info("密码合法");
-        } else {
-          cp.error("密码不够长");
-          evt.preventDefault();
-          return;
-        }
-
-        if (sPwd.value.trim() === sRPwd.value.trim()) {
-          cp.info("密码确认一致");
-        } else {
-          cp.error("密码确认不一致");
-          evt.preventDefault();
-          return;
-        }
-        
-        fm.pwd.value = sha1(sRPwd.value.trim(), true);
-
-      }  
+        registerProcess(evt.target);
+      }
+      evt.preventDefault();
     }
 
-    function messageListener(evt) {
-      cp.info("收到信息", evt.data);
+    function inputCheck(eleFm) {
+      if (eleFm.email.value.trim().match(EMAIL_REXP)) {
+        cp.info("邮箱名正确");
+      } else {
+        cp.error("错误的邮箱名格式");
+        return false;
+      }
+
+      const sPwd = doc.getElementById("signPwd");
+      const sRPwd = doc.getElementById("signRePwd");
+
+      if ("object" == typeof sPwd && sPwd.tagName == "INPUT" && "object" == typeof sRPwd && sRPwd.tagName == "INPUT") {
+        cp.info("密码元素存在");
+      } else {
+        cp.error("密码元素不存在");
+        return false;
+      }
+
+      if (sPwd.value.trim().length >= MIN_PWD_LEN) {
+        cp.info("密码合法");
+      } else {
+        cp.error("密码不够长");
+        return false;
+      }
+
+      if (sPwd.value.trim() === sRPwd.value.trim()) {
+        cp.info("密码确认一致");
+      } else {
+        cp.error("密码确认不一致");
+        return false;
+      }
+
+      return true;
+    }
+
+    function registerProcess(eleFm) {
+      if (!inputCheck(eleFm)) {
+        cp.error("输入检查未通过，提交中止");
+        return;
+      }
+      
+      let uri, sig, tout, bd;
+
+      try {
+        uri = new URL(eleFm.action);
+      } catch(err) {
+        console.error(err);
+        return;
+      }
+
+      sig = new AbortController();
+      tout = setTimeout(() => {
+        sig.abort();
+        console.error("Fetch 15s timeout.");
+      }, 15000);
+
+      bd = new URLSearchParams();
+      bd.append("email", eleFm.email.value.trim());
+      bd.append("pwd", sha1(doc.getElementById("signPwd").value.trim(), true));
+
+      fetch(uri, {
+        "method": "POST",
+        "priority": "low",
+        "mode": "cors",
+        "signal": sig.signal,
+        "body": bd
+      }).then(resp => {
+        return resp.json();
+
+      }).then(dt => {
+        if(dt && dt.code === 0) {
+          console.info(dt.msg);
+          doc.querySelector(".toast-body").textContent = dt.msg;
+          toastBootstrap.show();
+        }
+      }).catch(err => {
+        console.error("Response Exception:\n", err);
+      }).finally(() => {
+        clearTimeout(tout);
+      });
+      
     }
 
     suF.addEventListener("submit", submitHandler);
-    window.addEventListener("message", messageListener);
-
   });
 });
