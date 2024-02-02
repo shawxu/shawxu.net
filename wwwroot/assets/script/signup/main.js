@@ -31,7 +31,11 @@ require([
     function submitHandler(evt) {
       cp.info("signup form submit...");
       if ("object" == typeof evt && evt.target && evt.target.tagName == "FORM") {
-        registerProcess(evt.target);
+        setTimeout(() => {
+          cp.info("异步处理表单开始");
+          registerProcess(suF);
+        }, 0);
+        
       }
       evt.preventDefault();
     }
