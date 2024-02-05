@@ -49,9 +49,9 @@ require([
       }
 
       const sPwd = doc.getElementById("signPwd");
-      const sRPwd = doc.getElementById("signRePwd");
+      //const sRPwd = doc.getElementById("signRePwd");
 
-      if ("object" == typeof sPwd && sPwd.tagName == "INPUT" && "object" == typeof sRPwd && sRPwd.tagName == "INPUT") {
+      if ("object" == typeof sPwd && sPwd.tagName == "INPUT") {
         cp.info("密码元素存在");
       } else {
         cp.error("密码元素不存在");
@@ -65,12 +65,12 @@ require([
         return false;
       }
 
-      if (sPwd.value.trim() === sRPwd.value.trim()) {
+      /*if (sPwd.value.trim() === sRPwd.value.trim()) {
         cp.info("密码确认一致");
       } else {
         cp.error("密码确认不一致");
         return false;
-      }
+      }*/
 
       return true;
     }
