@@ -104,6 +104,7 @@ require([
         "method": "POST",
         "priority": "low",
         "mode": "cors",
+        "credentials": "include",
         "signal": sig.signal,
         "body": bd
       }).then(resp => {
