@@ -36,6 +36,7 @@
         "method": "POST",
         "priority": "low",
         "mode": "cors",
+        "credentials": "include",
         "signal": s.signal,
         "body": fd
       }).then(resp => {
