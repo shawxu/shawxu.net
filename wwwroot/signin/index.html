@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign in</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://s3.shawxu.net/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/style/main.css">
+	<link rel="shortcut icon" href="https://s3.shawxu.net/images/favicons/xx-v1/favicon.ico">
+</head>
+<body>
+  <main>
+    <article class="container">
+      <h4>用户登录</h4>
+      <!--<form name="signinForm" id="signinFm" method="post" target="postedFormSandbox" action="https://shawxu.cn/account/signin/" enctype="application/x-www-form-urlencoded">-->
+      <form name="signinForm" id="signinFm" method="post" action="https://shawxu.cn/account/signin/" enctype="application/x-www-form-urlencoded">
+          <div class="form-floating mb-3">
+          <input name="email" id="signEmail" type="email" class="form-control" placeholder="name@example.com">
+          <label for="signEmail">Email 地址</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input id="signPwd" type="password" class="form-control" placeholder="Password">
+          <label for="signPwd">密码</label>
+        </div>
+        <!--<div class="form-floating mb-3">
+          <input id="signRePwd" type="password" class="form-control" placeholder="RePassword">
+          <label for="signRePwd">密码确认</label>
+        </div>
+        <input type="hidden" name="pwd">-->
+        <button class="btn btn-secondary" type="reset">清空</button>
+        <button class="btn btn-primary" type="submit">登录</button>
+      </form>
+    </article>
+  </main>
+  <div class="toast-container top-50 start-50 translate-middle">
+    <div id="btsToast" class="toast align-items-center text-bg-success" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">
+          Hello, world! This is a toast message.
+        </div>
+        <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+  <!--<iframe title="hidden" name="postedFormSandbox" id="pFormSandbox" srcdoc="&lt;html&gt;&lt;/html&gt;" width="1" height="1"></iframe>-->
+  <script data-main="/assets/script/signin/main.js" src="https://s3.shawxu.net/js/lib/requirejs/require.js.2.3.6.min.js"></script>
+</body>
+</html>
