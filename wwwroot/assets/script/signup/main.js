@@ -86,14 +86,14 @@ require([
       try {
         uri = new URL(eleFm.action);
       } catch(err) {
-        console.error(err);
+        cp.error(err);
         return;
       }
 
       sig = new AbortController();
       tout = setTimeout(() => {
         sig.abort();
-        console.error("Fetch 15s timeout.");
+        cp.error("Fetch 15s timeout.");
       }, 15000);
 
       bd = new URLSearchParams();
@@ -112,12 +112,12 @@ require([
 
       }).then(dt => {
         if(dt && dt.code === 0) {
-          console.info(dt.msg);
+          cp.info(dt.msg);
           doc.querySelector(".toast-body").textContent = dt.msg;
           toastBootstrap.show();
         }
       }).catch(err => {
-        console.error("Response Exception:\n", err);
+        cp.error("Response Exception:\n", err);
       }).finally(() => {
         clearTimeout(tout);
       });
